@@ -1,0 +1,78 @@
+﻿@model IEnumerable<BugTracker.Models.Project>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Project Dashboard</h2>
+
+<p>
+    @if (User.IsInRole("ProjectManager") || (User.IsInRole("Admin")))
+    {
+        @Html.ActionLink("Create New Project", "Create", "Projects", null, new { @class = "btn btn-success" })
+
+    }
+
+
+
+
+</p>
+<table class="table table-striped table-bordered table-hover" id="ticketIndexTable">
+    <thead>
+        <tr>
+            <th>
+                Project
+                @*@Html.DisplayNameFor(model => model.Title)*@
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+           
+            @if (User.IsInRole("ProjectManager") || (User.IsInRole("Admin")))
+            {
+            <th>
+
+            </th>
+            }
+
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+
+                @if (User.IsInRole("ProjectManager") || (User.IsInRole("Admin")))
+
+                {
+                    <td>
+                        
+                            
+
+                        @if (User.IsInRole("ProjectManager") || (User.IsInRole("Admin")))
+                        {
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-outline btn-primary btn-xs" })
+
+
+                        }
+                      
+
+                    </td>
+                }
+            </tr>
+
+
+
+
+
+            }
+    </tbody>
+</table>

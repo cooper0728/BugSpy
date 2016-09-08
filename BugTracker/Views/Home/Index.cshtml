@@ -1,0 +1,188 @@
+﻿@using BugTracker.Models
+@model LoginViewModel
+
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <p class="lead">Never Fear!!!, The BugSpy is here!!!</p>
+        <p>The BugSpy is a tool that will help Project Mangagers, Developers and Submitters report issues with their software.</p>
+        <p>The BugSpy is a ticketing tool system for software development. </p>
+    </div>
+    <div class="col-md-4">
+        <img src="~/Img/bugtracker.png" />
+    </div>
+
+</div>
+@* =====================================Demo for Admiin===================================== *@
+
+
+<div class="row">
+    <div class="col-md-3">
+
+        <h2>Demo Login for Admin </h2>
+        <p>
+            Here is our Demo for Admin.  You can click on the button and try the BugSpy as a Project Manager.
+        </p>
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <input type="hidden" name="Email" value="cooper0728@gmail.com" />
+            <input type="hidden" name="Password" value="Allen1981!" />
+            <input type="hidden" name="FirstName" value="Charles" />
+            <input type="hidden" name="LastName" value="Cooper" />
+                <input type="submit" value="View as Admin" class="btn btn-default" />
+
+        }
+    </div>
+
+
+
+
+    @*=================== Demo Login for PM =========================*@
+
+    <div class="col-md-3">
+
+        <h2>Demo Login for Project Manager </h2>
+        <p>
+            Here is our Demo for Project Manager.  You can click on the button and try the BugSpy as a Project Manager.
+        </p>
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <input type="hidden" name="Email" value="PM@PM.com" />
+            <input type="hidden" name="Password" value="Abc&123!" />
+            <input type="hidden" name="FirstName" value="Project" />
+            <input type="hidden" name="LastName" value="Manager" />
+                <input type="submit" value="View as Project Manager" class="btn btn-default" />
+
+        }
+    </div>
+   
+
+
+    @*=================== Demo Login for Developer =========================*@
+    <div class="col-md-3">
+
+        <h2>Demo Login for Developer</h2>
+        <p>
+            Here is our Demo for as a Developer.  You can click on the button and try the BugTracker as a Developer.
+        </p>
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <input type="hidden" name="Email" value="developer@developer.com" />
+            <input type="hidden" name="Password" value="Abc&123!" />
+                <input type="hidden" name="FirstName" value="Developer" />
+                <input type="hidden" name="LastName" value="Developer" />
+                <input type="submit" value="View as Developer" class="btn btn-default" />
+        }
+
+
+    </div>
+
+
+
+
+
+    @*=================== Demo Login for Submitter =========================*@
+
+    <div class="col-md-3">
+
+        <h2>Demo Login for Submitter </h2>
+        <p>
+            Here is our Demo for as a Submitter.  You can click on the button and try the BugSpy as a Submitter.
+        </p>
+
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <input type="hidden" name="Email" value="submitter@submitter.com" />
+            <input type="hidden" name="Password" value="Abc&123!" />
+            <input type="hidden" name="FirstName" value="Submitter" />
+                <input type="hidden" name="LastName" value="Submitter" />
+                <input type="submit" value="View as Submitter" class="btn btn-default" />
+        }
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*===========================================================================================================================================================*@
+@*=================== Demo Login for PM =========================*@
+@*@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <input type="hidden" name="Email" value="PM@coderfoundry.com"/>
+        <input type="hidden" name="Password" value="Abc&123!" />
+        <input type="hidden" name="FirstName" value="Project" />
+        <input type="hidden" name="LastName" value="Manager" />
+        <input type="submit" value="View as Project Manager" class="btn btn-default" />
+    }*@
+@*=================== Demo Login for Submitter =========================*@
+@*@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <input type="hidden" name="Email" value="rykae@gmail.com" />
+    <input type="hidden" name="Password" value="Abc&123!" />
+    <input type="submit" value="View as Submitter" class="btn btn-default" />*@
+
+@*=================== Demo Login for Developer =========================*@
+@*@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <input type="hidden" name="Email" value="cbrown@gmail.com" />
+        <input type="hidden" name="Password" value="Allen1982!" />
+        <input type="submit" value="View as Developer" class="btn btn-default" />
+    }*@
